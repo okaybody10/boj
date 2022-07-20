@@ -3,6 +3,7 @@ using namespace std;
 typedef pair<int, int> pii;
 #define x first
 #define y second
+#define MOD 1000000007
 
 pii seg[4000007];
 // seg_tree, which type of node is pair: {length, count}
@@ -16,7 +17,7 @@ pii seg[4000007];
 pii add_pii(pii a, pii b) {
     if(a.x > b.x) return a;
     else if(a.x < b.x) return b;
-    return {a.x, a.y + b.y};
+    return {a.x, (a.y + b.y)%MOD};
 }
 
 pii update(int st, int en, int nd, int ch, pii val) {
